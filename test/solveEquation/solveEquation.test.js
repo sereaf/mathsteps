@@ -100,7 +100,9 @@ describe('solveEquation for =', function () {
     ['(2x-12)=(x+4)', 'x = 16'],
     ['x+y=x+y', '0 = 0'],
     ['y + 2x = 14 + y', 'x = 7'],
-    ['((1)/(2+1)) = ((1)/(3))', '1/3 = 1/3']
+    ['((1)/(2+1)) = ((1)/(3))', '1/3 = 1/3'],
+    ['-((1)/(3)) = ((-1)/(3))', '-(1/3) = -1/3'],
+    ['-(x/2)=3', 'x = -6']
     // TODO: fix these cases, fail because lack of factoring support, for complex #s,
     // for taking the sqrt of both sides, etc
     // ['(x + y) (y + 2) = 0', 'y = -y'],
