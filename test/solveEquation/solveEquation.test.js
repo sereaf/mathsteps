@@ -102,7 +102,8 @@ describe('solveEquation for =', function () {
     ['y + 2x = 14 + y', 'x = 7'],
     ['((1)/(2+1)) = ((1)/(3))', '1/3 = 1/3'],
     ['-((1)/(3)) = ((-1)/(3))', '-(1/3) = -1/3'],
-    ['-(x/2)=3', 'x = -6']
+    ['-(x/2)=3', 'x = -6'],
+    ['44x=2.74', 'x = 0.06227273'],
     // TODO: fix these cases, fail because lack of factoring support, for complex #s,
     // for taking the sqrt of both sides, etc
     // ['(x + y) (y + 2) = 0', 'y = -y'],
@@ -127,7 +128,7 @@ describe('solveEquation for non = comparators', function() {
     ['2x < 6', 'x < 3'],
     ['-x > 1', 'x < -1'],
     ['2 - x < 3', 'x > -1'],
-    ['9.5j / 6+ 5.5j >= 3( 5j - 2)', 'j <= 0.7579']
+    ['9.5j / 6+ 5.5j >= 3( 5j - 2)', 'j <= 0.7578947']
   ];
   tests.forEach(t => testSolve(t[0], t[1], t[2]));
 });
