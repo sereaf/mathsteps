@@ -24,8 +24,8 @@ describe('addConstantAndFraction', function () {
         '6.3'],
     ],
     ['1/3 + 5.8',
-      ['0.3333 + 5.8',
-        '6.1333']
+      ['0.3333333 + 5.8',
+        '6.133333299999999']
     ],
   ];
   tests.forEach(t => testAddConstantAndFraction(t[0], t[1]));
