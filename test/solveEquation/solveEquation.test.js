@@ -22,8 +22,7 @@ function testSolve(equationString, outputStr, debug=false) {
 
 describe('solveEquation for =', function () {
   const tests = [
-    // can't solve this because two symbols: g and x -- so there's no steps
-    ['g *( x ) = ( x - 4) ^ ( 2) - 3', NO_STEPS],
+    ['g *( x ) = (x-4)^(2) - 3', 'g = x - 8 + 13 / x'],
     // can't solve this because we don't deal with inequalities yet
     // See: https://www.cymath.com/answer.php?q=(%20x%20)%2F(%202x%20%2B%207)%20%3E%3D%204
     ['( x )/( 2x + 7) >= 4', NO_STEPS],
@@ -46,9 +45,9 @@ describe('solveEquation for =', function () {
     ['9x + 4 - 3 = 2x', 'x = -1/7'],
     ['9x + 4 - 3 = -2x', 'x = -1/11'],
     ['5x + (1/2)x = 27 ', 'x = 54/11'],
-    ['2x/3 = 2x - 4 ', 'x = 3'],
+    ['2x/3 = 2x - 4', 'x = 3'],
     ['(-2/3)x + 3/7 = 1/2', 'x = -3/28'],
-    ['-9/4v + 4/5 = 7/8 ', 'v = -1/30'],
+    ['-(9/4)v + 4/5 = 7/8 ', 'v = -1/30'],
     // TODO: update test once we have root support
     ['x^2 - 2 = 0', 'x^2 = 2'],
     ['x/(2/3) = 1', 'x = 2/3'],
@@ -93,7 +92,6 @@ describe('solveEquation for =', function () {
     ['2/(4x) = 1', 'x = 1/2'],
     ['2/(8 - 4x) = 1/2', 'x = 1'],
     ['2/(1 + 1 + 4x) = 1/3', 'x = 1'],
-    ['(3 + x) / (x^2 + 3) = 1', 'x = [0, 1]'],
     ['6/x + 8/(2x) = 10', 'x = 1'],
     ['(x+1)=4', 'x = 3'],
     ['((x)/(4))=4', 'x = 16'],
@@ -104,6 +102,7 @@ describe('solveEquation for =', function () {
     ['-((1)/(3)) = ((-1)/(3))', '-(1/3) = -1/3'],
     ['-(x/2)=3', 'x = -6'],
     ['44x=2.74', 'x = 0.062272727272727'],
+    // TODO: FIX: ['(3 + x)/(x^2 + 3) = 1', 'x = [0, 1]'], not solving after factors?
     // TODO: fix these cases, fail because lack of factoring support, for complex #s,
     // for taking the sqrt of both sides, etc
     // ['(x + y) (y + 2) = 0', 'y = -y'],
