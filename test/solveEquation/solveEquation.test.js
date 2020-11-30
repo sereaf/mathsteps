@@ -79,6 +79,7 @@ describe('solveEquation for =', function () {
     ['0 = x * x + (x + x) + 1', 'x = [-1, -1]'],
     ['(x^3 / x) + (3x - x) + 1 = 0', 'x = [-1, -1]'],
     ['0 = (x^3 / x) + (3x - x) + 1', 'x = [-1, -1]'],
+    ['1 = x - 1/2', 'x = 3/2'],
     // Solve for roots before expanding
     ['2^7 (x + 2) = 0', 'x = -2'],
     ['(x + y) (x + 2) = 0', 'x = [-y, -2]'],
