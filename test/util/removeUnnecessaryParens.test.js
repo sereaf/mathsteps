@@ -25,6 +25,11 @@ describe('removeUnnecessaryParens', function () {
     ['(x+4) - (12 + x)', 'x + 4 - (12 + x)'],
     ['(2x)^2', '(2x)^2'],
     ['((4+x)-5)^(2)', '(4 + x - 5)^2'],
+    // TODO: removeUnnecessaryParens does not always remove all unnecessary parens in a single pass
+    // For example, the output below is acheived only by running the input through rUP at least twice
+    // ['((3)/2) * x', '3/2 x']
+    // This behavior was already the partial cause of one bug (which was fixed in a different way),
+    // so if we notice it causing additional issues in the future we probably want to address.
   ];
   tests.forEach(t => testRemoveUnnecessaryParens(t[0], t[1]));
 });

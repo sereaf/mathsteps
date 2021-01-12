@@ -46,6 +46,9 @@ describe('solveEquation for =', function () {
     ['9x + 4 - 3 = -2x', 'x = -1/11'],
     ['5x + (1/2)x = 27 ', 'x = 54/11'],
     ['2x/3 = 2x - 4', 'x = 3'],
+    ['2 - ((1)/(2)) x = 1', 'x = 2'],
+    ['2 + -(((1)/(2))*x) = 1', 'x = 2'],
+    ['3 - (x*3) = 4', 'x = -1/3'],
     ['(-2/3)x + 3/7 = 1/2', 'x = -3/28'],
     ['-(9/4)v + 4/5 = 7/8 ', 'v = -1/30'],
     // TODO: update test once we have root support
@@ -170,6 +173,9 @@ describe('constant comparison support', function () {
     ['( r )/( ( r ) ) = ( 1)/( 10)', ChangeTypes.STATEMENT_IS_FALSE],
     ['5 + (x - 5) = x', ChangeTypes.STATEMENT_IS_TRUE],
     ['4x - 4= 4x', ChangeTypes.STATEMENT_IS_FALSE],
+    // TODO: our fork fails these cases where the original does not - fix?
+    // ['x - 1/x = x - 1/x', ChangeTypes.STATEMENT_IS_TRUE],
+    // ['4x - 4/x = 4x', ChangeTypes.STATEMENT_IS_FALSE],
   ];
   tests.forEach(t => testSolveConstantEquation(t[0], t[1], t[2]));
 });
