@@ -3,7 +3,9 @@ const factor = require('./lib/factor');
 const simplifyExpression = require('./lib/simplifyExpression');
 const solveEquation = require('./lib/solveEquation');
 
-// Caching system
+// Caching system - infrastructure for future performance optimization
+// Note: Cache flags are defined but not yet actively used in the current implementation
+// They provide hooks for future optimization work
 const CACHE_ENABLED = true;
 const CACHE_LOG_MISSING_ENABLED = false;
 const CACHE_LOG_REUSED_ENABLED = false;
@@ -12,7 +14,9 @@ const CACHE_COMPARE = {};
 const CACHE_TEXT_TO_TEX = {};
 const CACHE_TEXT_TO_NODE = {};
 
-// Preprocessor hooks
+// Preprocessor hooks - infrastructure for future extensibility
+// Note: Registration functions are available but preprocessors are not yet
+// executed in the current implementation. They provide hooks for future extensibility
 const ARRAY_OF_PREPROCESS_FUNCTIONS_BEFORE_PARSE = [];
 const ARRAY_OF_PREPROCESS_FUNCTIONS_AFTER_PARSE = [];
 
