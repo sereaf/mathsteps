@@ -39,7 +39,6 @@ describe('sync_forks.sh script', function() {
       const manifestContent = fs.readFileSync(INDEX_PATH, 'utf8');
       let manifest;
       
-      // Should be valid JSON
       assert.doesNotThrow(() => {
         manifest = JSON.parse(manifestContent);
       }, 'index.json should be valid JSON');
