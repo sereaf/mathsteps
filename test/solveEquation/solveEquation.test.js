@@ -51,8 +51,8 @@ describe('solveEquation for =', function () {
     ['3 - (x*3) = 4', 'x = -1/3'],
     ['(-2/3)x + 3/7 = 1/2', 'x = -3/28'],
     ['-(9/4)v + 4/5 = 7/8 ', 'v = -1/30'],
-    // TODO: update test once we have root support
-    ['x^2 - 2 = 0', 'x^2 = 2'],
+    // Nth root support added
+    ['x^2 - 2 = 0', 'x = nthRoot(2, 2)'],
     ['x/(2/3) = 1', 'x = 2/3'],
     ['(x+1)/3 = 4', 'x = 11'],
     ['2(x+3)/3 = 2', 'x = 0'],
@@ -106,6 +106,10 @@ describe('solveEquation for =', function () {
     ['-((1)/(3)) = ((-1)/(3))', '-(1/3) = -1/3'],
     ['-(x/2)=3', 'x = -6'],
     ['44x=2.74', 'x = 0.062272727272727'],
+    // Additional nth root tests
+    ['x^2 = 1', 'x = 1'],
+    ['x^3 - 3 = 0', 'x = nthRoot(3, 3)'],
+    ['x^2 + 1 = 0', 'x = nthRoot(-1, 2)'],
     // TODO: FIX: ['(3 + x)/(x^2 + 3) = 1', 'x = [0, 1]'], not solving after factors?
     // TODO: fix these cases, fail because lack of factoring support, for complex #s,
     // for taking the sqrt of both sides, etc
